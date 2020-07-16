@@ -1,0 +1,165 @@
+package com.website.testing.davina;
+
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+
+public class WebsiteRegisterTest {
+	
+	
+	WebDriver driver;
+	
+	@BeforeSuite
+	public void setUpMethod() {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vincent Pinto\\Desktop\\JAVA SOFTWARE\\tools\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("http://automationpractice.com/");
+	}
+	
+	@Test(priority = 1)
+	public void websiteRegisterTest() throws InterruptedException {
+		
+		
+		driver.findElement(By.className("login")).click();
+		System.out.println("into sign-in");
+		Thread.sleep(5000);
+		
+		driver.findElement(By.id("email_create")).sendKeys("day1@gmail.com");
+		driver.findElement(By.id("SubmitCreate")).click();
+		
+		Thread.sleep(2000);
+		
+		try {
+		
+		String actual_error = driver.findElement(By.xpath("//*[@id=\"create_account_error\"]/ol/li")).getText();
+		
+		String expected_error1 ="Invalid email address.";
+		String expected_error2 ="An account using this email address has already been registered. Please enter a valid password or request a new one. ";
+		
+		
+		if(actual_error.equals(expected_error1)) {
+			Assert.assertEquals(actual_error, expected_error1);
+		}else if(actual_error.equals(expected_error2)) {
+			Assert.assertEquals(actual_error, expected_error2);
+		}
+		
+		System.out.println("Error:"+actual_error);
+		
+		}catch(NoSuchElementException e) {
+			System.out.println("Into registration");
+		}
+		
+	}
+	
+	@Test(priority = 2)
+	public void createAccountTest() {
+		
+		//Title
+		WebElement radio = driver.findElement(By.name("id_gender_2"));//will set title as MRS. if you want to set title as MR put id_gender_1
+		radio.click();
+		//firstname
+		driver.findElement(By.id("customer_firstname")).sendKeys("Dan");
+		
+		//lastname
+		driver.findElement(By.id("customer_lastname")).sendKeys("Hunchmen");
+		
+		//password
+		driver.findElement(By.id("passwd")).sendKeys("DanHunchmen");
+		
+		//day
+		Select day = new Select(driver.findElement(By.name("days")));
+		day.selectByValue("1");
+		
+		//month
+		Select month = new Select(driver.findElement(By.name("months")));
+		month.selectByValue("2");
+				
+		//year
+		Select year = new Select(driver.findElement(By.name("years")));
+		year.selectByValue("1995");
+		
+		
+		//address details
+		//firstname
+		driver.findElement(By.id("firstname")).sendKeys("Dan");
+		//lastname
+		driver.findElement(By.id("lastname")).sendKeys("Hunchmen");
+		//company
+		driver.findElement(By.id("company")).sendKeys("Hunchmen");
+		//address1
+		driver.findElement(By.id("address1")).sendKeys("Ralf Street");
+		//city
+		driver.findElement(By.id("city")).sendKeys("LA");
+		//state
+		Select state = new Select(driver.findElement(By.name("id_state")));
+		state.selectByVisibleText("Illinois");
+		
+		//postalcode
+		driver.findElement(By.id("postcode")).sendKeys("10000");
+		
+		//Country
+		Select country = new Select(driver.findElement(By.name("id_country")));
+		country.selectByValue("United States");
+		
+		//mobile
+		driver.findElement(By.id("phone_mobile")).sendKeys("9992551376");
+		
+		//address alias
+		driver.findElement(By.name("alias")).sendKeys("Address");
+		
+		//registerbutton
+		driver.findElement(By.id("submitAccount")).click();
+		
+		
+		try {
+			
+			String actual_error =driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/ol/li"));
+			String e1 ="You must register at least one phone number.";
+			
+		}catch (NoSuchElementException e) {
+			System.out.println("Account Registered successfully");
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+	
+	
+	
+	
+	
+	  
+}

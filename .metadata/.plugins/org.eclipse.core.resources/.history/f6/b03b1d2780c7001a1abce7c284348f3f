@@ -1,0 +1,55 @@
+package com.website.testing.davina;
+
+import org.openqa.selenium.By;
+
+import org.testng.annotations.Test;
+
+public class AddToCart extends WebsiteLoginTest {
+	
+	
+	@Test(priority = 4)
+	public void addToCart() throws InterruptedException {
+		
+		System.out.println("Inside add to cart");
+		
+		driver.findElement(By.linkText("Home")).click();
+		
+		
+		driver.findElement(By.linkText("Blouse")).click();
+		Thread.sleep(500);
+		
+		
+		driver.findElement(By.className("Submit")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.linkText("Continue shopping")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.className("icon-home")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.linkText("Printed Dress")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.className("Submit")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.linkText("Continue shopping")).click();
+		Thread.sleep(500);
+		
+		driver.findElement(By.className("icon-home")).click();
+		Thread.sleep(500);
+			
+		
+		driver.findElement(By.className("shopping_cart")).click();
+		
+		
+		
+	}
+	
+	
+
+  
+  
+  
+}

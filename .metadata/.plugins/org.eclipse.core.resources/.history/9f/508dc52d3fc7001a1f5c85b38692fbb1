@@ -1,0 +1,9 @@
+package com.website;
+
+import org.testng.annotations.Test;
+
+public class WebsiteRegisterTest {
+  @Test
+  public void f() {
+  }
+}

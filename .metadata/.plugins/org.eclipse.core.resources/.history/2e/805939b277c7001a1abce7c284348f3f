@@ -1,0 +1,24 @@
+package com.website.testing.davina;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class AddToCart extends WebsiteLoginTest {
+	
+	
+	@Test
+	public void addToCart() throws InterruptedException {
+		
+		driver.findElement(By.linkText("Home")).click();
+		Thread.sleep(1000);
+		
+		
+		
+		
+	}
+	
+  
+  
+  
+  
+}

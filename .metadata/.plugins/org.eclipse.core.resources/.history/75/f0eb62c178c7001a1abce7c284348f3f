@@ -1,0 +1,33 @@
+package com.website.testing.davina;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.Test;
+
+public class AddToCart extends WebsiteLoginTest {
+	
+	
+	@Test
+	public void addToCart() throws InterruptedException {
+		
+		System.out.println("Inside add to cart");
+		
+		driver.findElement(By.linkText("Home")).click();
+		Thread.sleep(1000);
+		
+		
+		
+		
+	}
+	
+	@AfterSuite
+	public void tearDown() throws InterruptedException {
+		System.out.println("In tearDown");
+		Thread.sleep(1000);
+		driver.quit();
+	}
+
+  
+  
+  
+}

@@ -1,0 +1,62 @@
+package com.website.testing.davina;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.Test;
+
+public class WebsiteLoginTest extends WebsiteRegisterTest{
+	
+	WebsiteRegisterTest con;
+	
+	  @Test
+	  public void websiteLogin() throws InterruptedException {
+		  
+		  		  
+		  con.driver.findElement(By.className("login")).click();
+		  System.out.println("into sign-in");
+		  Thread.sleep(2000);
+		  
+		  
+		  
+		  con.driver.findElement(By.id("email")).sendKeys("dav@gmail.com");
+		  con.driver.findElement(By.id("passwd")).sendKeys("danika");
+		  
+		  con.driver.findElement(By.id("SubmitLogin")).click();
+		  Thread.sleep(2000);
+		  
+		  try {
+			  
+			  String actual_error = con.driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li"));
+			  String expected_error1 = "An email address required.";
+			  String expected_error2 = "Password is required.";
+			  String expected_error3 = "Authentication failed.";
+			  if(actual_error.equals(expected_error1)){
+					Assert.assertEquals(actual_error, expected_error1);
+				}
+			  if(actual_error.equals(expected_error2)){
+					Assert.assertEquals(actual_error, expected_error2);
+				}
+			  if(actual_error.equals(expected_error3)){
+					Assert.assertEquals(actual_error, expected_error3);
+				}
+		  }catch (NoSuchElementException e) {
+			  System.out.println("Login done");
+		}
+		  
+	  }
+	  
+	  
+	  
+	  @AfterSuite
+		public void tearDown() throws InterruptedException {
+			System.out.println("In tearDown");
+			Thread.sleep(2000);
+			con.driver.quit();
+		}
+		
+	  
+}

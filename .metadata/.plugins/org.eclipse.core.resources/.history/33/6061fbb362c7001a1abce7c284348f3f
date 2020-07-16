@@ -1,0 +1,33 @@
+package com.website.testing.davina;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class WebsiteLoginTest {
+	
+	WebDriver driver;
+	
+	  @Test(priority = 1)
+	  public void websiteLogin() throws InterruptedException {
+		  
+		  driver.findElement(By.id("email")).sendKeys("dav@gmail.com");
+		  driver.findElement(By.id("passwd")).sendKeys("danika");
+		  
+		  driver.findElement(By.id("SubmitLogin")).click();
+		  Thread.sleep(2000);
+		  
+		  try {
+			  
+			  String actual_error = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li"));
+			  String expected_error1 = "An email address required.";
+			  String expected_error2 = "Password is required.";
+			  String expected_error3 = "Authentication failed.";
+			  String expected_error4 = "Password is required.";
+		  }catch (NoSuchElementException e) {
+			  System.out.println("Login done");
+		}
+		  
+	  }
+}
