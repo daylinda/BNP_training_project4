@@ -48,7 +48,7 @@ public class WebsiteLoginTest extends WebsiteRegisterTest {
 		  
 	  }
 	  
-	  @Test(priority = 5)
+	  @Test(priority = 6)
 	  public void logout() throws InterruptedException {
 		//logout
 			driver.findElement(By.className("logout")).click();

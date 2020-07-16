@@ -9,7 +9,6 @@
         <methods>
           <include name="setUpMethod"/>
           <include name="addToCart"/>
-          <include name="logout"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.website.testing.davina.AddToCart -->

@@ -1,7 +1,7 @@
 package com.website.testing.davina;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.annotations.Test;
 
 public class AddToCart extends WebsiteLoginTest {
@@ -11,8 +11,6 @@ public class AddToCart extends WebsiteLoginTest {
 	public void addToCart() throws InterruptedException {
 		
 		System.out.println("Inside add to cart");
-		
-		
 		
 		
 		driver.findElement(By.linkText("Blouse")).click();
@@ -34,17 +32,23 @@ public class AddToCart extends WebsiteLoginTest {
 		driver.findElement(By.name("Submit")).click();
 		Thread.sleep(500);
 		
-		driver.findElement(By.linkText("View my shopping cart")).click();
-			
+		driver.findElement(By.className("cross")).click();
+		Thread.sleep(500);
 		
+		driver.findElement(By.className("icon-home")).click();
+		Thread.sleep(500);
 		
-		
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")).click();
+		Thread.sleep(9000);
 		
 		
 	}
 	
-	
+	@Test(priority = 5)
+	public void deleteFromCart() throws InterruptedException {
+		driver.findElement(By.className("cart_quantity_delete")).click();
+		Thread.sleep(5000);
+	}
 
   
   
