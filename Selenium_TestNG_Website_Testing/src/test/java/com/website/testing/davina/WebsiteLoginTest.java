@@ -17,7 +17,7 @@ public class WebsiteLoginTest extends WebsiteRegisterTest {
 		   
 		  		  
 		  driver.findElement(By.className("login")).click();
-		  System.out.println("into websiteLogin");
+//		  System.out.println("into websiteLogin");
 		  
 		 
 		  driver.findElement(By.id("email")).sendKeys(userEmail);
@@ -28,23 +28,29 @@ public class WebsiteLoginTest extends WebsiteRegisterTest {
 		  
 		  try {
 			  
-			  String actual_error = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li"));
+			  String actual_error = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li")).getText();
 			  String expected_error1 = "An email address required.";
 			  String expected_error2 = "Password is required.";
 			  String expected_error3 = "Authentication failed.";
 			  if(actual_error.equals(expected_error1)){
 					Assert.assertEquals(actual_error, expected_error1);
-				}
-			  if(actual_error.equals(expected_error2)){
+					System.out.println("Error: "+actual_error);
+					
+				}else if(actual_error.equals(expected_error2)){
 					Assert.assertEquals(actual_error, expected_error2);
-				}
-			  if(actual_error.equals(expected_error3)){
+					System.out.println("Error: "+actual_error);
+					
+				}else if(actual_error.equals(expected_error3)){
 					Assert.assertEquals(actual_error, expected_error3);
+					System.out.println("Error: "+actual_error+" Please enter valid email address and password");
+					
 				}
+			  tearDown();
 		  }catch (NoSuchElementException e) {
 			  System.out.println("Login done");
+			  driver.findElement(By.linkText("Home")).click();
 		}
-		  driver.findElement(By.linkText("Home")).click();
+		  
 		  
 	  }
 	  

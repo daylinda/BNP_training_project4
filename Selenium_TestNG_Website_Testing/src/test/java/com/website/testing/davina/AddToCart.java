@@ -10,37 +10,45 @@ public class AddToCart extends WebsiteLoginTest {
 	@Test(priority = 4)
 	public void addToCart() throws InterruptedException {
 		
-		System.out.println("Inside add to cart");
-		
-		
+		//System.out.println("Inside add to cart");
+				
 		driver.findElement(By.linkText("Blouse")).click();
 		Thread.sleep(500);
-		
-		
 		driver.findElement(By.name("Submit")).click();
 		Thread.sleep(500);
-		
 		driver.findElement(By.className("cross")).click();
 		Thread.sleep(500);
-		
 		driver.findElement(By.className("icon-home")).click();
 		Thread.sleep(500);
 		
 		driver.findElement(By.linkText("Printed Dress")).click();
 		Thread.sleep(500);
-		
 		driver.findElement(By.name("Submit")).click();
 		Thread.sleep(500);
-		
 		driver.findElement(By.className("cross")).click();
 		Thread.sleep(500);
-		
 		driver.findElement(By.className("icon-home")).click();
 		Thread.sleep(500);
 		
+		
+		//Use Search Bar to search for the an item to be added to cart
+		driver.findElement(By.id("search_query_top")).sendKeys("Summer Dresses");
+		driver.findElement(By.name("submit_search")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.linkText("Printed Summer Dress")).click();
+		Thread.sleep(500);
+		driver.findElement(By.name("Submit")).click();
+		Thread.sleep(500);
+		driver.findElement(By.className("cross")).click();
+		Thread.sleep(500);
+		driver.findElement(By.className("icon-home")).click();
+		Thread.sleep(500);
+
+		//Go to cart for checkout
 		driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")).click();
 		Thread.sleep(9000);
-		
+		System.out.println("Inside cart");
 		
 	}
 	

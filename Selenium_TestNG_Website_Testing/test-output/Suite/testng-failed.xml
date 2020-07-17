@@ -2,16 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
-    <parameter name="userPassword" value="danika"/>
-    <parameter name="userEmail" value="dav@gmail.com"/>
+    <parameter name="userPassword" value="alicia201"/>
+    <parameter name="userEmail" value="alicia201@gmail.com"/>
     <classes>
-      <class name="com.website.testing.davina.AddToCart">
+      <class name="com.website.testing.davina.WebsiteLoginTest">
         <methods>
           <include name="setUpMethod"/>
-          <include name="addToCart"/>
+          <include name="websiteLogin" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.website.testing.davina.AddToCart -->
+      </class> <!-- com.website.testing.davina.WebsiteLoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

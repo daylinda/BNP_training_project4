@@ -11,18 +11,23 @@
 	</groups>  -->
 
   <test thread-count="5" name="Test">
-  	<parameter name="userEmail" value="dav@gmail.com"/>
-  	<parameter name="userPassword" value="danika"/>
+  	<parameter name="userEmail" value="Tania201@gmail.com"/>
+  	<parameter name="userPassword" value="tania201"/>
   	
     <classes>
-    	<class name="com.website.testing.davina.AddToCart">
-    		<methods>
+    	 <class name="com.website.testing.davina.AddToCart">
+    		<!--<methods>
+    		<exclude name="websiteRegisterTest()"/>
+    		<exclude name="createAccountTest()"/>
+    		</methods> -->
+    	</class>
+    	<!--  <class name="com.website.testing.davina.WebsiteLoginTest">
+    	 	<methods>
     		<exclude name="websiteRegisterTest()"/>
     		<exclude name="createAccountTest()"/>
     		</methods>
-    	</class>
-    	<!-- <class name="com.website.testing.davina.WebsiteLoginTest"/>	 -->
-      <!-- <class name="com.website.testing.davina.WebsiteRegisterTest"/> -->
+    	 </class>
+      <class name="com.website.testing.davina.WebsiteRegisterTest"/> -->
       
       	
     </classes>

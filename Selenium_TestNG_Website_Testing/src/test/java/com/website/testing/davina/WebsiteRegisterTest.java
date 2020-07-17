@@ -34,8 +34,8 @@ public class WebsiteRegisterTest {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("http://automationpractice.com/");
-		System.out.println("In setup");
-		Thread.sleep(1000);
+//		System.out.println("In setup");
+		
 	}
 	
 	@Test(priority = 1)
@@ -44,13 +44,13 @@ public class WebsiteRegisterTest {
 		
 		
 		driver.findElement(By.className("login")).click();
-		System.out.println("into sign-in");
-		Thread.sleep(1000);
+//		System.out.println("into sign-in");
+		Thread.sleep(100);
 		
 		driver.findElement(By.id("email_create")).sendKeys(userEmail);
 		driver.findElement(By.id("SubmitCreate")).click();
 		
-		Thread.sleep(1000);
+		
 		
 		try {
 		
@@ -62,14 +62,18 @@ public class WebsiteRegisterTest {
 		
 		if(actual_error.equals(expected_error1)) {
 			Assert.assertEquals(actual_error, expected_error1);
+			System.out.println("Error:"+actual_error);
+			tearDown();
+			
 		}else if(actual_error.equals(expected_error2)) {
 			Assert.assertEquals(actual_error, expected_error2);
+			System.out.println("Error:"+actual_error);
 		}
 		
-		System.out.println("Error:"+actual_error);
+		
 		
 		}catch(NoSuchElementException e) {
-			System.out.println("Into registration");
+			System.out.println("Email Id accepted for registration");
 		}
 		
 	}
@@ -83,10 +87,10 @@ public class WebsiteRegisterTest {
 		WebElement radio = driver.findElement(By.id("id_gender2"));//will set title as MRS. if you want to set title as MR put id_gender1
 		radio.click();
 		//firstname
-		driver.findElement(By.id("customer_firstname")).sendKeys("Dan");
+		driver.findElement(By.id("customer_firstname")).sendKeys("Tania");
 		
 		//lastname
-		driver.findElement(By.id("customer_lastname")).sendKeys("Hunchmen");
+		driver.findElement(By.id("customer_lastname")).sendKeys("Libermen");
 		
 		//password
 		driver.findElement(By.id("passwd")).sendKeys(userPassword);
@@ -106,11 +110,11 @@ public class WebsiteRegisterTest {
 		
 		//address details
 		//firstname
-		driver.findElement(By.id("firstname")).sendKeys("Dan");
+		driver.findElement(By.id("firstname")).sendKeys("Tania");
 		//lastname
-		driver.findElement(By.id("lastname")).sendKeys("Hunchmen");
+		driver.findElement(By.id("lastname")).sendKeys("Libermen");
 		//company
-		driver.findElement(By.id("company")).sendKeys("Hunchmen");
+		driver.findElement(By.id("company")).sendKeys("Newmen");
 		//address1
 		driver.findElement(By.id("address1")).sendKeys("Ralf Street");
 		//city
@@ -140,7 +144,7 @@ public class WebsiteRegisterTest {
 		
 		try {
 			
-			String actual_error =driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/ol/li"));
+			String actual_error =driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/ol/li")).getText();
 			String e1 ="You must register at least one phone number.";
 			String e2 ="lastname is required.";
 			String e3 ="firstname is required.";
@@ -179,7 +183,8 @@ public class WebsiteRegisterTest {
 				Assert.assertEquals(actual_error, e9);
 			}
 			
-			
+			System.out.println("Error:"+actual_error);
+			tearDown();
 			
 			
 		}catch (NoSuchElementException e) {
@@ -203,7 +208,7 @@ public class WebsiteRegisterTest {
 	 		
 	@AfterSuite
 	public void tearDown() throws InterruptedException {
-		System.out.println("In tearDown");
+//		System.out.println("In tearDown");
 		Thread.sleep(1000);
 		driver.quit();
 	}
