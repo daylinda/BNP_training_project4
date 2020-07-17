@@ -2,66 +2,66 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="102512" started-at="2020-07-17T09:31:17Z" finished-at="2020-07-17T09:33:00Z">
+  <suite name="Suite" duration-ms="129561" started-at="2020-07-17T09:38:38Z" finished-at="2020-07-17T09:40:48Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="102512" started-at="2020-07-17T09:31:17Z" finished-at="2020-07-17T09:33:00Z">
+    <test name="Test" duration-ms="129561" started-at="2020-07-17T09:38:38Z" finished-at="2020-07-17T09:40:48Z">
       <class name="com.website.testing.davina.AddToCart">
-        <test-method status="PASS" signature="setUpMethod()[pri:0, instance:com.website.testing.davina.AddToCart@75881071]" name="setUpMethod" is-config="true" duration-ms="14079" started-at="2020-07-17T09:31:03Z" finished-at="2020-07-17T09:31:17Z">
+        <test-method status="PASS" signature="setUpMethod()[pri:0, instance:com.website.testing.davina.AddToCart@75881071]" name="setUpMethod" is-config="true" duration-ms="13548" started-at="2020-07-17T09:38:25Z" finished-at="2020-07-17T09:38:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpMethod -->
-        <test-method status="PASS" signature="websiteRegisterTest(java.lang.String)[pri:1, instance:com.website.testing.davina.AddToCart@75881071]" name="websiteRegisterTest" duration-ms="3385" started-at="2020-07-17T09:31:17Z" finished-at="2020-07-17T09:31:21Z">
+        <test-method status="PASS" signature="websiteRegisterTest(java.lang.String)[pri:1, instance:com.website.testing.davina.AddToCart@75881071]" name="websiteRegisterTest" duration-ms="22384" started-at="2020-07-17T09:38:38Z" finished-at="2020-07-17T09:39:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[alicia201@gmail.com]]>
+                <![CDATA[Tania201@gmail.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- websiteRegisterTest -->
-        <test-method status="PASS" signature="createAccountTest(java.lang.String)[pri:2, instance:com.website.testing.davina.AddToCart@75881071]" name="createAccountTest" duration-ms="20056" started-at="2020-07-17T09:31:21Z" finished-at="2020-07-17T09:31:41Z">
+        <test-method status="PASS" signature="createAccountTest(java.lang.String)[pri:2, instance:com.website.testing.davina.AddToCart@75881071]" name="createAccountTest" duration-ms="28821" started-at="2020-07-17T09:39:01Z" finished-at="2020-07-17T09:39:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[alicia201]]>
+                <![CDATA[tania201]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAccountTest -->
-        <test-method status="PASS" signature="websiteLogin(java.lang.String, java.lang.String)[pri:3, instance:com.website.testing.davina.AddToCart@75881071]" name="websiteLogin" duration-ms="27504" started-at="2020-07-17T09:31:41Z" finished-at="2020-07-17T09:32:08Z">
+        <test-method status="PASS" signature="websiteLogin(java.lang.String, java.lang.String)[pri:3, instance:com.website.testing.davina.AddToCart@75881071]" name="websiteLogin" duration-ms="27188" started-at="2020-07-17T09:39:29Z" finished-at="2020-07-17T09:39:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[alicia201@gmail.com]]>
+                <![CDATA[Tania201@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[alicia201]]>
+                <![CDATA[tania201]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- websiteLogin -->
-        <test-method status="PASS" signature="addToCart()[pri:4, instance:com.website.testing.davina.AddToCart@75881071]" name="addToCart" duration-ms="43864" started-at="2020-07-17T09:32:08Z" finished-at="2020-07-17T09:32:52Z">
+        <test-method status="PASS" signature="addToCart()[pri:4, instance:com.website.testing.davina.AddToCart@75881071]" name="addToCart" duration-ms="43361" started-at="2020-07-17T09:39:57Z" finished-at="2020-07-17T09:40:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method status="PASS" signature="deleteFromCart()[pri:5, instance:com.website.testing.davina.AddToCart@75881071]" name="deleteFromCart" duration-ms="5119" started-at="2020-07-17T09:32:52Z" finished-at="2020-07-17T09:32:57Z">
+        <test-method status="PASS" signature="deleteFromCart()[pri:5, instance:com.website.testing.davina.AddToCart@75881071]" name="deleteFromCart" duration-ms="5112" started-at="2020-07-17T09:40:40Z" finished-at="2020-07-17T09:40:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteFromCart -->
-        <test-method status="PASS" signature="logout()[pri:6, instance:com.website.testing.davina.AddToCart@75881071]" name="logout" duration-ms="2513" started-at="2020-07-17T09:32:57Z" finished-at="2020-07-17T09:33:00Z">
+        <test-method status="PASS" signature="logout()[pri:6, instance:com.website.testing.davina.AddToCart@75881071]" name="logout" duration-ms="2621" started-at="2020-07-17T09:40:45Z" finished-at="2020-07-17T09:40:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.website.testing.davina.AddToCart@75881071]" name="tearDown" is-config="true" duration-ms="1790" started-at="2020-07-17T09:33:00Z" finished-at="2020-07-17T09:33:02Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.website.testing.davina.AddToCart@75881071]" name="tearDown" is-config="true" duration-ms="1761" started-at="2020-07-17T09:40:48Z" finished-at="2020-07-17T09:40:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
